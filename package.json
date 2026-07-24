@@ -1,0 +1,12 @@
+{
+  "name": "robin-luis-fotografie",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website Redesign – Robin Luis Fotografie",
+  "scripts": {
+    "start": "serve -s . -l ${PORT:-3000}"
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}

@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hochzeitsfotograf Robin Luis | Emotionen pur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#171412;
+    --ink-soft:#6b645e;
+    --paper:#ffffff;
+    --paper-warm:#faf8f5;
+    --line:#e9e4de;
+    --gold:#b3915a;
+    --gold-soft:#f3ece1;
+    --serif:'Fraunces', Georgia, serif;
+    --sans:'Inter', -apple-system, sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+
+  .eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:20px}
+  .section{padding:clamp(80px,12vh,150px) 0}
+
+  /* ---------- Nav ---------- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
+  nav.scrolled{border-bottom-color:var(--line)}
+  .nav-inner{max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,40px);height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .nav-logo img{height:44px;width:auto}
+  .nav-links{display:flex;gap:36px;align-items:center;font-size:13px;letter-spacing:.06em}
+  .nav-links a{color:var(--ink-soft);transition:color .2s}
+  .nav-links a:hover{color:var(--ink)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.08em;padding:14px 30px;background:var(--ink);color:#fff;border:1px solid var(--ink);border-radius:999px;cursor:pointer;transition:all .25s}
+  .btn:hover{background:var(--gold);border-color:var(--gold)}
+  .btn.ghost{background:transparent;color:var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:#fff}
+  .btn.small{padding:11px 22px;font-size:12px}
+  .burger{display:none;background:none;border:none;font-size:24px;cursor:pointer;color:var(--ink)}
+  @media(max-width:860px){
+    .nav-links{display:none}
+    .burger{display:block}
+    .nav-cta-desktop{display:none}
+  }
+  .mobile-menu{display:none;position:fixed;inset:0;z-index:99;background:var(--paper);padding:120px 32px;flex-direction:column;gap:28px;font-family:var(--serif);font-size:28px}
+  .mobile-menu.open{display:flex}
+
+  /* ---------- Hero ---------- */
+  .hero{padding-top:76px;min-height:100vh;display:flex;flex-direction:column}
+  .hero-grid{flex:1;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,64px);align-items:center;max-width:1320px;margin:0 auto;padding:clamp(40px,6vh,80px) clamp(20px,4vw,40px)}
+  .hero h1{font-size:clamp(40px,5.4vw,76px);letter-spacing:-.01em;margin-bottom:28px}
+  .hero h1 em{font-style:italic;color:var(--gold)}
+  .hero p.lead{font-size:17px;color:var(--ink-soft);max-width:440px;margin-bottom:40px}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
+  .hero-proof{display:flex;gap:32px;flex-wrap:wrap;font-size:13px;color:var(--ink-soft)}
+  .hero-proof span b{display:block;font-family:var(--serif);font-size:22px;font-weight:400;color:var(--ink)}
+  .stars{color:var(--gold);letter-spacing:2px;font-size:14px}
+  .hero-img{position:relative}
+  .hero-img img{width:100%;height:clamp(420px,72vh,720px);object-fit:cover;border-radius:2px}
+  .hero-img .float{position:absolute;left:-56px;bottom:48px;width:200px;height:250px;object-fit:cover;border:8px solid #fff;box-shadow:0 24px 60px rgba(23,20,18,.18);border-radius:2px}
+  @media(max-width:860px){
+    .hero-grid{grid-template-columns:1fr}
+    .hero-img .float{display:none}
+    .hero-img img{height:52vh}
+  }
+
+  /* ---------- Marquee gallery ---------- */
+  .gallery-head{text-align:center;max-width:640px;margin:0 auto clamp(40px,7vh,72px)}
+  .gallery-head h2{font-size:clamp(32px,4vw,52px);margin-bottom:18px}
+  .gallery-head p{color:var(--ink-soft)}
+  .masonry{columns:3;column-gap:16px;max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,40px)}
+  .masonry img{width:100%;margin-bottom:16px;border-radius:2px;transition:opacity .3s;cursor:pointer}
+  .masonry img:hover{opacity:.88}
+  @media(max-width:860px){.masonry{columns:2}}
+  @media(max-width:520px){.masonry{columns:1}}
+
+  /* ---------- About ---------- */
+  .about{background:var(--paper-warm)}
+  .about-grid{display:grid;grid-template-columns:.85fr 1fr;gap:clamp(40px,6vw,100px);align-items:center}
+  .about-imgs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .about-imgs img{width:100%;height:280px;object-fit:cover;border-radius:2px}
+  .about-imgs img:first-child{grid-column:1/-1;height:340px}
+  .about h2{font-size:clamp(30px,3.6vw,46px);margin-bottom:24px}
+  .about p{color:var(--ink-soft);margin-bottom:18px;max-width:520px}
+  .about .sig{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--ink);margin:28px 0 32px}
+  .facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:8px;margin-bottom:36px;font-size:13px;color:var(--ink-soft)}
+  .facts li{list-style:none}
+  .facts li::before{content:"— ";color:var(--gold)}
+  @media(max-width:860px){.about-grid{grid-template-columns:1fr}}
+
+  /* ---------- Angebote ---------- */
+  .offers-head{text-align:center;max-width:620px;margin:0 auto 64px}
+  .offers-head h2{font-size:clamp(32px,4vw,52px);margin-bottom:18px}
+  .offers-head p{color:var(--ink-soft)}
+  .offer-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .offer-card{border:1px solid var(--line);border-radius:4px;padding:44px 36px;display:flex;flex-direction:column;transition:border-color .25s, transform .25s;background:#fff}
+  .offer-card:hover{border-color:var(--gold);transform:translateY(-4px)}
+  .offer-card .tag{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:16px}
+  .offer-card h3{font-size:27px;margin-bottom:14px}
+  .offer-card p{font-size:14px;color:var(--ink-soft);flex:1;margin-bottom:24px}
+  .offer-card .price{font-family:var(--serif);font-size:17px;font-style:italic;margin-bottom:24px}
+  .offer-card ul{list-style:none;font-size:13.5px;color:var(--ink-soft);margin-bottom:32px;display:grid;gap:9px}
+  .offer-card ul li::before{content:"✓";color:var(--gold);margin-right:10px}
+  @media(max-width:900px){.offer-cards{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
+
+  /* ---------- Stories ---------- */
+  .stories-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .story{position:relative;overflow:hidden;border-radius:2px}
+  .story img{width:100%;height:420px;object-fit:cover;transition:transform .6s ease}
+  .story:hover img{transform:scale(1.045)}
+  .story .label{position:absolute;left:0;right:0;bottom:0;padding:60px 24px 22px;background:linear-gradient(transparent,rgba(20,16,12,.72));color:#fff;font-family:var(--serif);font-size:21px}
+  @media(max-width:900px){.stories-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.stories-grid{grid-template-columns:1fr}}
+
+  /* ---------- Podcast ---------- */
+  .podcast{background:var(--ink);color:#fff}
+  .podcast-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:center}
+  .podcast .eyebrow{color:var(--gold)}
+  .podcast h2{font-size:clamp(30px,3.8vw,48px);margin-bottom:22px}
+  .podcast p{color:rgba(255,255,255,.66);max-width:460px;margin-bottom:36px}
+  .podcast img{border-radius:4px;width:100%}
+  .btn.light{background:#fff;color:var(--ink);border-color:#fff}
+  .btn.light:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+  @media(max-width:860px){.podcast-grid{grid-template-columns:1fr}}
+
+  /* ---------- Testimonials ---------- */
+  .testi-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:48px;flex-wrap:wrap}
+  .testi-head h2{font-size:clamp(30px,3.8vw,48px);max-width:560px}
+  .testi-scroll{display:flex;gap:16px;overflow-x:auto;padding:4px 4px 24px;scroll-snap-type:x mandatory}
+  .testi-scroll::-webkit-scrollbar{height:4px}
+  .testi-scroll::-webkit-scrollbar-thumb{background:var(--line);border-radius:99px}
+  .testi-scroll img{height:380px;width:auto;border-radius:2px;scroll-snap-align:start;flex-shrink:0}
+
+  /* ---------- Final CTA ---------- */
+  .final{background:var(--paper-warm);text-align:center}
+  .final h2{font-size:clamp(34px,4.6vw,60px);max-width:760px;margin:0 auto 24px}
+  .final h2 em{font-style:italic;color:var(--gold)}
+  .final p{color:var(--ink-soft);max-width:520px;margin:0 auto 40px}
+  .final .alt{margin-top:28px;font-size:13px;color:var(--ink-soft)}
+  .final .alt a{border-bottom:1px solid var(--gold);padding-bottom:2px}
+
+  /* ---------- Footer ---------- */
+  footer{padding:72px 0 40px;border-top:1px solid var(--line)}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:56px}
+  .foot-grid img{height:52px;width:auto;margin-bottom:20px}
+  .foot-grid p, .foot-grid a{font-size:14px;color:var(--ink-soft);line-height:2}
+  .foot-grid h4{font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;color:var(--ink);margin-bottom:16px}
+  .foot-grid a{display:block}
+  .foot-grid a:hover{color:var(--gold)}
+  .foot-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:28px}
+  @media(max-width:760px){.foot-grid{grid-template-columns:1fr}}
+
+  /* ---------- Booking overlay ---------- */
+  .overlay{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
+  .overlay.open{display:flex}
+  .overlay-bg{position:absolute;inset:0;background:rgba(23,20,18,.55);backdrop-filter:blur(6px)}
+  .modal{position:relative;background:#fff;border-radius:8px;width:min(680px,100%);max-height:min(760px,92vh);display:flex;flex-direction:column;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,.3);animation:pop .35s cubic-bezier(.2,.9,.3,1.1)}
+  @keyframes pop{from{opacity:0;transform:translateY(24px) scale(.98)}to{opacity:1;transform:none}}
+  .modal-head{padding:28px 36px 0;display:flex;justify-content:space-between;align-items:start}
+  .modal-head .kicker{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:500}
+  .modal-head h3{font-family:var(--serif);font-size:26px;font-weight:400;margin-top:6px}
+  .close-x{background:none;border:1px solid var(--line);width:38px;height:38px;border-radius:50%;font-size:16px;cursor:pointer;color:var(--ink-soft);flex-shrink:0;transition:all .2s}
+  .close-x:hover{border-color:var(--ink);color:var(--ink)}
+  .steps-bar{display:flex;gap:6px;padding:22px 36px 0}
+  .steps-bar i{height:3px;flex:1;background:var(--line);border-radius:99px;transition:background .3s}
+  .steps-bar i.on{background:var(--gold)}
+  .modal-body{padding:26px 36px 36px;overflow-y:auto}
+  .modal-foot{padding:18px 36px 28px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line)}
+  .link-btn{background:none;border:none;font-family:var(--sans);font-size:13px;color:var(--ink-soft);cursor:pointer;letter-spacing:.04em}
+  .link-btn:hover{color:var(--ink)}
+
+  .pick-grid{display:grid;gap:12px}
+  .pick{border:1px solid var(--line);border-radius:6px;padding:20px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:all .2s;background:#fff;text-align:left;font-family:var(--sans)}
+  .pick:hover{border-color:var(--gold)}
+  .pick.sel{border-color:var(--gold);background:var(--gold-soft)}
+  .pick b{font-family:var(--serif);font-weight:400;font-size:19px;display:block;margin-bottom:3px}
+  .pick small{font-size:13px;color:var(--ink-soft);font-weight:300}
+  .pick .dot{width:20px;height:20px;border:1.5px solid var(--line);border-radius:50%;flex-shrink:0;position:relative}
+  .pick.sel .dot{border-color:var(--gold)}
+  .pick.sel .dot::after{content:"";position:absolute;inset:4px;background:var(--gold);border-radius:50%}
+
+  .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .fgrid .full{grid-column:1/-1}
+  @media(max-width:560px){.fgrid{grid-template-columns:1fr}}
+  label{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;color:var(--ink-soft);margin-bottom:7px}
+  input,select,textarea{width:100%;font-family:var(--sans);font-size:15px;font-weight:300;padding:13px 15px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);transition:border-color .2s}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold)}
+  textarea{resize:vertical;min-height:80px}
+
+  .cal{border:1px solid var(--line);border-radius:8px;padding:18px 18px 14px;margin-bottom:22px}
+  .cal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+  .cal-head b{font-family:var(--serif);font-size:19px;font-weight:400}
+  .cal-nav{background:none;border:1px solid var(--line);width:34px;height:34px;border-radius:50%;cursor:pointer;color:var(--ink);font-size:14px;transition:all .2s}
+  .cal-nav:hover:not(:disabled){border-color:var(--gold);color:var(--gold)}
+  .cal-nav:disabled{opacity:.3;cursor:default}
+  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+  .cal-wd{text-align:center;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);padding:6px 0}
+  .cal-d{aspect-ratio:1;border:none;background:none;border-radius:50%;font-family:var(--sans);font-size:14px;font-weight:300;color:var(--ink);cursor:pointer;transition:all .15s}
+  .cal-d:hover:not(:disabled):not(.sel){background:var(--gold-soft)}
+  .cal-d:disabled{color:#cfc9c2;cursor:default}
+  .cal-d.sel{background:var(--gold);color:#fff;font-weight:500}
+  .slot-times{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  @media(max-width:560px){.slot-times{grid-template-columns:repeat(3,1fr)}}
+  .slot-t{border:1px solid var(--line);border-radius:6px;padding:11px 4px;text-align:center;font-size:14px;cursor:pointer;background:#fff;font-family:var(--sans);font-weight:300;transition:all .2s}
+  .slot-t.sel{border-color:var(--gold);background:var(--gold-soft);font-weight:500}
+  .hint{font-size:12.5px;color:var(--ink-soft);margin-top:18px}
+
+  .summary{background:var(--paper-warm);border-radius:6px;padding:22px 24px;margin-bottom:24px;font-size:14px}
+  .summary div{display:flex;justify-content:space-between;gap:16px;padding:7px 0;border-bottom:1px solid var(--line)}
+  .summary div:last-child{border-bottom:none}
+  .summary span{color:var(--ink-soft)}
+  .summary b{font-weight:500;text-align:right}
+
+  .done{text-align:center;padding:40px 10px}
+  .done .ring{width:72px;height:72px;border:1.5px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 28px;font-size:28px;color:var(--gold)}
+  .done h3{font-family:var(--serif);font-size:30px;font-weight:400;margin-bottom:14px}
+  .done p{color:var(--ink-soft);max-width:400px;margin:0 auto 30px;font-size:15px}
+
+  .step{display:none}
+  .step.on{display:block}
+  .err{color:#b3543f;font-size:13px;margin-top:14px;display:none}
+
+  /* Mobile-Feintuning Overlay */
+  @media(max-width:560px){
+    .modal-head{padding:22px 22px 0}
+    .modal-head h3{font-size:20px}
+    .steps-bar{padding:16px 22px 0}
+    .modal-body{padding:20px 22px 26px}
+    .modal-foot{padding:14px 22px 20px}
+    input,select,textarea{padding:11px 13px}
+    .fgrid{gap:12px}
+    .summary{padding:16px 18px;font-size:13px}
+    .cal{padding:14px 12px 10px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#top"><img src="https://robinluisfotografie.ch/wp-content/uploads/2024/02/Robin-Luis_black_low-res.png" alt="Robin Luis Hochzeitsfotograf"></a>
+    <div class="nav-links">
+      <a href="#galerie">Galerie</a>
+      <a href="#ueber-mich">Über mich</a>
+      <a href="#angebote">Angebote</a>
+      <a href="#stories">Love-Stories</a>
+      <a href="#podcast">Podcast</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+    <button class="btn small nav-cta-desktop" onclick="openBooking()">Termin buchen</button>
+    <button class="burger" id="burgerBtn" onclick="toggleMenu()" aria-label="Menü">☰</button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#galerie" onclick="toggleMenu()">Galerie</a>
+  <a href="#ueber-mich" onclick="toggleMenu()">Über mich</a>
+  <a href="#angebote" onclick="toggleMenu()">Angebote</a>
+  <a href="#stories" onclick="toggleMenu()">Love-Stories</a>
+  <a href="#podcast" onclick="toggleMenu()">Podcast</a>
+  <a href="#kontakt" onclick="toggleMenu()">Kontakt</a>
+  <button class="btn" onclick="toggleMenu();openBooking()">Termin buchen</button>
+</div>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="hero-grid">
+    <div>
+      <p class="eyebrow">Hochzeitsfotograf · Schweiz</p>
+      <h1>Euer Hochzeits&shy;fotograf für <em>wahre Emotionen</em></h1>
+      <p class="lead">Bei uns stehen Liebe, Leidenschaft und das perfekte Bild im Fokus. Vergesst langweilige Hochzeitsfotografie – wir bringen das Leuchten, Lachen und Leben in eure Bilder.</p>
+      <div class="hero-ctas">
+        <button class="btn" onclick="openBooking()">Kennenlern-Gespräch buchen</button>
+        <a class="btn ghost" href="#galerie">Galerie ansehen</a>
+      </div>
+      <div class="hero-proof">
+        <span><b><span class="stars">★★★★★</span></b>Nur 5-Sterne-Bewertungen</span>
+        <span><b>10+</b>Jahre Hochzeitsfotografie</span>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="https://robinluisfotografie.ch/wp-content/uploads/2024/01/Hochzeitsfotograf-robin-luis-lachende-gruppe.webp" alt="Lachende Hochzeitsgesellschaft">
+      <img class="float" src="https://robinluisfotografie.ch/wp-content/uploads/2024/02/Robin-Luis-Hochzeitsfotograf-Fotostory_1c-1.webp" alt="Brautpaar">
+    </div>
+  </div>
+</header>
+
+<!-- ================= GALERIE ================= -->
+<section class="section" id="galerie">
+  <div class="gallery-head">
+    <p class="eyebrow">Emotionen pur</p>
+    <h2>Das Leuchten, Lachen und Leben in euren Bildern</h2>
+    <p>Vergesst langweilige Hochzeitsfotografie – Authentizität steht im Fokus: Lachen, Strahlen und unvergessliche Momente.</p>
+  </div>
+  <div class="masonry">
+    <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/01/Hochzeitsfotograf-robin-luis-emotionen-g.webp" alt="Hochzeitsemotionen">
+    <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/01/Hochzeitsfotograf-robin-luis-emotionen-d.webp" alt="Hochzeitsemotionen">
+    <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/01/Hochzeitsfotograf-robin-luis-emotionen-f.webp" alt="Hochzeitsemotionen">
+    <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/01/Hochzeitsfotograf-robin-luis-jubelpose.webp" alt="Jubelpose">
+    <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/01/Hochzeitsfotograf-robin-luis-emotionen-e.webp" alt="Hochzeitsemotionen">
+    <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/01/Hochzeitsfotograf-robin-luis-emotionen-c.webp" alt="Hochzeitsemotionen">
+    <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/01/Hochzeitsfotograf-robin-luis-eindruecke-a.webp" alt="Eindrücke">
+    <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/01/Hochzeitsfotograf-robin-luis-emotionen-b.webp" alt="Hochzeitsemotionen">
+    <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/01/Hochzeitsfotograf-robin-luis-emotionen-a.webp" alt="Hochzeitsemotionen">
+    <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/01/Hochzeitsfotograf-robin-luis-hebefigur.webp" alt="Hebefigur">
+    <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/01/Hochzeitsfotograf-robin-luis-emotionen-h.webp" alt="Hochzeitsemotionen">
+    <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/01/Hochzeitsfotograf-robin-luis-emotionen-i.webp" alt="Hochzeitsemotionen">
+  </div>
+</section>
+
+<!-- ================= ÜBER MICH ================= -->
+<section class="section about" id="ueber-mich">
+  <div class="wrap about-grid">
+    <div class="about-imgs">
+      <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/01/Hochzeitsfotograf-robin-luis-hallo-hier-bin-ich.webp" alt="Robin Luis">
+      <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/02/Hochzeitsfotograf-robin-luis-ich-liebe-ueber-mich.webp" alt="Robin bei der Arbeit">
+      <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/02/Hochzeitsfotograf-robin-luis-ueber-mich-immer-fuer-einen-spass-zu-haben.webp" alt="Immer für einen Spass zu haben">
+    </div>
+    <div>
+      <p class="eyebrow">Wer bin ich</p>
+      <h2>Hey, ich bin's Robin – euer Emotionenfänger</h2>
+      <p>Ich liebe die Hochzeitsfotografie, da ich hier aus dem vollen Schöpfen kann und die emotionsgeladenen Momente für euch einfangen darf. Genau so bin ich ein grosser Romantiker, der auch mal gemeinsam mit seiner Frau heult oder sich vor lauter Lachen mit Tränen in den Augen kugelt.</p>
+      <p>Von Brautpaaren und Kollegen höre ich immer wieder, dass ich wie ein Anker der Ruhe im aufregenden Hochzeitswirbel bin. Wenn es darauf ankommt, die Gäste für das perfekte Foto zu versammeln, übernehme ich die Regie mit Charme und Effizienz.</p>
+      <p>Zuhause bin ich mit meiner Frau Elena und unseren Kindern Amirah und Luca im malerischen Kanton Luzern, nahe des Sempachersees – dort befindet sich auch mein Studio.</p>
+      <ul class="facts">
+        <li>Tierfreund</li><li>Technik-Nerd</li><li>Unermüdlich</li><li>Durchgeknallt</li><li>Filmbegeistert</li><li>Romantiker</li>
+      </ul>
+      <p class="sig">«Ich begleite keine Kunden, sondern Brautpaare, die mir wichtig sind.»</p>
+      <button class="btn ghost" onclick="openBooking()">Lernt mich kennen</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ANGEBOTE ================= -->
+<section class="section" id="angebote">
+  <div class="wrap">
+    <div class="offers-head">
+      <p class="eyebrow">Angebote</p>
+      <h2>Eure Hochzeit, meine Mission</h2>
+      <p>In den vergangenen 10 Jahren habe ich jede kostbare Erfahrung in ein E-Book gepackt, um euch den Weg zum Hochzeitstag zu erleichtern. Über unsere persönliche WhatsApp-Gruppe bin ich stets ein offenes Ohr für all eure Fragen.</p>
+    </div>
+    <div class="offer-cards">
+      <div class="offer-card">
+        <p class="tag">Klassiker</p>
+        <h3>Hochzeit: Fotos</h3>
+        <p>Eure Hochzeit fotografisch begleitet – von den Vorbereitungen bis zur Party. Lebendige, authentische Bilder voller Energie.</p>
+        <ul>
+          <li>Ganztägige Begleitung</li>
+          <li>Persönliche WhatsApp-Gruppe</li>
+          <li>Hochzeits-E-Book inklusive</li>
+        </ul>
+        <p class="price">Preis auf Anfrage</p>
+        <button class="btn ghost" onclick="openBooking('Hochzeit: Fotos')">Termin buchen</button>
+      </div>
+      <div class="offer-card">
+        <p class="tag">Bewegtbild</p>
+        <h3>Hochzeit: Video</h3>
+        <p>Euer Tag als emotionaler Hochzeitsfilm – die Momente, die man immer wieder erleben möchte.</p>
+        <ul>
+          <li>Hochzeitsfilm eures Tages</li>
+          <li>Persönliche WhatsApp-Gruppe</li>
+          <li>Hochzeits-E-Book inklusive</li>
+        </ul>
+        <p class="price">Preis auf Anfrage</p>
+        <button class="btn ghost" onclick="openBooking('Hochzeit: Video')">Termin buchen</button>
+      </div>
+      <div class="offer-card">
+        <p class="tag">Das volle Paket</p>
+        <h3>Fotos &amp; Video</h3>
+        <p>Das Beste aus beiden Welten: Fotografie und Film aus einer Hand, perfekt aufeinander abgestimmt.</p>
+        <ul>
+          <li>Fotos &amp; Hochzeitsfilm</li>
+          <li>Persönliche WhatsApp-Gruppe</li>
+          <li>Hochzeits-E-Book inklusive</li>
+        </ul>
+        <p class="price">Preis auf Anfrage</p>
+        <button class="btn" onclick="openBooking('Hochzeit: Fotos & Video')">Termin buchen</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STORIES ================= -->
+<section class="section" id="stories" style="padding-top:0">
+  <div class="wrap">
+    <div class="gallery-head">
+      <p class="eyebrow">Love-Stories</p>
+      <h2>Weitere glückliche Paare</h2>
+    </div>
+    <div class="stories-grid">
+      <a class="story" href="https://robinluisfotografie.ch/erich-natalie/" target="_blank" rel="noopener">
+        <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/02/Robin-Luis-Hochzeitsfotograf-weitere-stories_f_1.webp" alt="Natalie & Erich">
+        <span class="label">Natalie &amp; Erich</span>
+      </a>
+      <a class="story" href="https://robinluisfotografie.ch/patrick-susanne/" target="_blank" rel="noopener">
+        <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/02/Robin-Luis-Hochzeitsfotograf-weitere-Stories-a.webp" alt="Susanne & Patrick">
+        <span class="label">Susanne &amp; Patrick</span>
+      </a>
+      <a class="story" href="https://robinluisfotografie.ch/martin-astrid/" target="_blank" rel="noopener">
+        <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/02/Robin-Luis-Hochzeitsfotograf-weitere-story_b.webp" alt="Astrid & Martin">
+        <span class="label">Astrid &amp; Martin</span>
+      </a>
+      <a class="story" href="https://robinluisfotografie.ch/simon-ricarda/" target="_blank" rel="noopener">
+        <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/02/Robin-Luis-Hochzeitsfotograf-weitere-stories-e.webp" alt="Ricarda & Simon">
+        <span class="label">Ricarda &amp; Simon</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PODCAST ================= -->
+<section class="section podcast" id="podcast">
+  <div class="wrap podcast-grid">
+    <div>
+      <p class="eyebrow">Der Hochzeitspodcast</p>
+      <h2>«Ja, ich will» – der Hochzeitspodcast mit Robin</h2>
+      <p>Tipps, Geschichten und ehrliche Einblicke rund um euren grossen Tag – direkt aus über 10 Jahren Hochzeitserfahrung.</p>
+      <a class="btn light" href="https://www.jaichwillpodcast.ch" target="_blank" rel="noopener">Jetzt reinhören</a>
+    </div>
+    <a href="https://www.jaichwillpodcast.ch" target="_blank" rel="noopener">
+      <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2025/09/480b5c7b-7033-4fcf-9a41-c8b993c16b71.png" alt="Der Hochzeitspodcast mit Robin">
+    </a>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="testi-head">
+      <div>
+        <p class="eyebrow">Feedback</p>
+        <h2>Ich begleite keine Kunden, sondern Brautpaare, die mir wichtig sind</h2>
+      </div>
+      <div class="hero-proof" style="align-items:end">
+        <span><b><span class="stars">★★★★★</span></b>Nur 5-Sterne-Bewertungen</span>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="testi-scroll">
+      <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/02/Feedback5a-400x516.webp" alt="Feedback">
+      <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/02/Feedback5-400x516.webp" alt="Feedback">
+      <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/02/Feedback4.webp" alt="Feedback">
+      <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/02/Feedback3a-400x516.webp" alt="Feedback">
+      <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/02/Feedback3-400x516.webp" alt="Feedback">
+      <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/02/Feedback2-400x516.webp" alt="Feedback">
+      <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/02/Erich-und-Nathalie-400x516.webp" alt="Feedback Erich und Nathalie">
+      <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/02/Feedback8-400x516.webp" alt="Feedback">
+      <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/02/Feedback7a-400x516.webp" alt="Feedback">
+      <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/02/Feedback7-400x516.webp" alt="Feedback">
+      <img loading="lazy" src="https://robinluisfotografie.ch/wp-content/uploads/2024/02/Feedback6-400x516.webp" alt="Feedback">
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="section final" id="kontakt">
+  <div class="wrap">
+    <p class="eyebrow">Bereit?</p>
+    <h2>Lasst uns eure Emotionen <em>für die Ewigkeit</em> festhalten</h2>
+    <p>Bucht in zwei Minuten euer unverbindliches Kennenlern-Gespräch – ich freue mich auf euch und eure Geschichte.</p>
+    <button class="btn" onclick="openBooking()">Jetzt Termin buchen</button>
+    <p class="alt">Oder direkt: <a href="https://wa.me/0041797728712" target="_blank" rel="noopener">WhatsApp</a> · <a href="tel:0041797728712">+41 79 772 87 12</a> · <a href="mailto:info@robinluisfotografie.ch">info@robinluisfotografie.ch</a></p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img src="https://robinluisfotografie.ch/wp-content/uploads/2024/02/Robin-Luis_black_low-res.png" alt="Robin Luis">
+        <p>Euer Hochzeitsfotograf für Emotionen<br>Hochzeitsfotos &amp; Hochzeitsvideos<br>Neuenkirch, Kanton Luzern</p>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <a href="tel:0041797728712">+41 79 772 87 12</a>
+        <a href="mailto:info@robinluisfotografie.ch">info@robinluisfotografie.ch</a>
+        <a href="https://wa.me/0041797728712" target="_blank" rel="noopener">WhatsApp schreiben</a>
+      </div>
+      <div>
+        <h4>Folgen</h4>
+        <a href="https://www.instagram.com/robin_luis__fotografie/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/robinluisfotografie/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.jaichwillpodcast.ch" target="_blank" rel="noopener">Podcast</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Robin Luis Fotografie</span>
+      <span><a href="https://robinluisfotografie.ch/impressum/" target="_blank" rel="noopener">Impressum</a> &nbsp;·&nbsp; <a href="https://robinluisfotografie.ch/datenschutz/" target="_blank" rel="noopener">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= BOOKING OVERLAY ================= -->
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="overlay-bg" onclick="closeBooking()"></div>
+  <div class="modal">
+    <div class="modal-head">
+      <div>
+        <p class="kicker" id="stepKicker">Schritt 1 von 4</p>
+        <h3 id="modalTitle">Was dürfen wir für euch festhalten?</h3>
+      </div>
+      <button class="close-x" onclick="closeBooking()" aria-label="Schliessen">✕</button>
+    </div>
+    <div class="steps-bar" id="stepsBar"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+
+    <div class="modal-body">
+      <!-- STEP 1: Angebot -->
+      <div class="step on" id="step1">
+        <div class="pick-grid">
+          <button class="pick" data-offer="Hochzeit: Fotos" onclick="pickOffer(this)">
+            <span><b>Hochzeit: Fotos</b><small>Fotografische Begleitung eures Tages · Preis auf Anfrage</small></span>
+            <span class="dot"></span>
+          </button>
+          <button class="pick" data-offer="Hochzeit: Video" onclick="pickOffer(this)">
+            <span><b>Hochzeit: Video</b><small>Euer Tag als emotionaler Hochzeitsfilm · Preis auf Anfrage</small></span>
+            <span class="dot"></span>
+          </button>
+          <button class="pick" data-offer="Hochzeit: Fotos & Video" onclick="pickOffer(this)">
+            <span><b>Hochzeit: Fotos &amp; Video</b><small>Das volle Paket aus einer Hand · Preis auf Anfrage</small></span>
+            <span class="dot"></span>
+          </button>
+        </div>
+        <p class="err" id="err1">Bitte wählt ein Angebot aus.</p>
+      </div>
+
+      <!-- STEP 2: Hochzeitsdetails -->
+      <div class="step" id="step2">
+        <div class="fgrid">
+          <div class="full">
+            <label for="fNames">Euer beider Vornamen *</label>
+            <input id="fNames" type="text" placeholder="z.B. Lena & Marco">
+          </div>
+          <div>
+            <label for="fDate">Hochzeitsdatum *</label>
+            <input id="fDate" type="date">
+          </div>
+          <div>
+            <label for="fLocation">Hochzeits-Location</label>
+            <input id="fLocation" type="text" placeholder="Ort / Location">
+          </div>
+          <div>
+            <label for="fGuests">Anzahl Gäste (ca.)</label>
+            <input id="fGuests" type="number" min="2" placeholder="z.B. 80">
+          </div>
+          <div>
+            <label for="fSource">Wie seid ihr auf mich aufmerksam geworden?</label>
+            <select id="fSource">
+              <option value="">Bitte wählen</option>
+              <option>Website für Hochzeiten</option>
+              <option>Freund(e)</option>
+              <option>Hair- u. Make-up-Artist</option>
+              <option>Soziale Medien</option>
+              <option>Google</option>
+            </select>
+          </div>
+          <div class="full">
+            <label for="fMsg">Möchtet ihr mir noch etwas mitgeben?</label>
+            <textarea id="fMsg" placeholder="Erzählt mir von eurem Tag …"></textarea>
+          </div>
+        </div>
+        <p class="err" id="err2">Bitte füllt eure Vornamen und das Hochzeitsdatum aus.</p>
+      </div>
+
+      <!-- STEP 3: Wunschtag -->
+      <div class="step" id="step3">
+        <label>Wunschtag *</label>
+        <div class="cal">
+          <div class="cal-head">
+            <button class="cal-nav" type="button" id="calPrev" onclick="calMove(-1)" aria-label="Vorheriger Monat">‹</button>
+            <b id="calLabel"></b>
+            <button class="cal-nav" type="button" id="calNext" onclick="calMove(1)" aria-label="Nächster Monat">›</button>
+          </div>
+          <div class="cal-grid" id="calGrid"></div>
+        </div>
+        <p class="err" id="err3">Bitte wählt einen Wunschtag aus.</p>
+      </div>
+
+      <!-- STEP 4: Uhrzeit + Kanal -->
+      <div class="step" id="step4">
+        <label>Uhrzeit *</label>
+        <div class="slot-times" id="slotTimes"></div>
+        <div class="fgrid" style="margin-top:20px">
+          <div class="full">
+            <label for="fChannel">Wie möchtet ihr sprechen?</label>
+            <select id="fChannel">
+              <option>Videocall (Zoom)</option>
+              <option>Telefon</option>
+              <option>WhatsApp</option>
+              <option>Persönlich im Studio (Neuenkirch)</option>
+            </select>
+          </div>
+        </div>
+        <p class="hint">Das Kennenlern-Gespräch dauert ca. 30 Minuten und ist unverbindlich &amp; kostenlos.</p>
+        <p class="err" id="err4">Bitte wählt eine Uhrzeit aus.</p>
+      </div>
+
+      <!-- STEP 5: Kontakt + Zusammenfassung -->
+      <div class="step" id="step5">
+        <div class="summary" id="summaryBox"></div>
+        <div class="fgrid">
+          <div>
+            <label for="fEmail">E-Mail-Adresse *</label>
+            <input id="fEmail" type="email" placeholder="ihr@example.ch">
+          </div>
+          <div>
+            <label for="fPhone">Telefonnummer *</label>
+            <input id="fPhone" type="tel" placeholder="+41 …">
+          </div>
+        </div>
+        <p class="err" id="err5">Bitte gebt eine gültige E-Mail-Adresse und Telefonnummer an.</p>
+      </div>
+
+      <!-- STEP 6: Danke -->
+      <div class="step" id="step6">
+        <div class="done">
+          <div class="ring">✓</div>
+          <h3>Merci, eure Anfrage ist unterwegs!</h3>
+          <p id="doneText">Robin meldet sich innerhalb von 24 Stunden bei euch, um den Termin zu bestätigen.</p>
+          <button class="btn" onclick="closeBooking()">Alles klar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-foot" id="modalFoot">
+      <button class="link-btn" id="backBtn" onclick="prevStep()" style="visibility:hidden">← Zurück</button>
+      <button class="btn" id="nextBtn" onclick="nextStep()">Weiter →</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ---------- Nav ---------- */
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>10));
+function toggleMenu(){
+  const open=document.getElementById('mobileMenu').classList.toggle('open');
+  document.getElementById('burgerBtn').textContent=open?'✕':'☰';
+  document.body.style.overflow=open?'hidden':'';
+}
+
+/* ---------- Booking state ---------- */
+const state={offer:null,day:null,time:null};
+let step=1;
+const TITLES={
+  1:'Was dürfen wir für euch festhalten?',
+  2:'Erzählt mir von eurer Hochzeit',
+  3:'An welchem Tag passt euch das Kennenlern-Gespräch?',
+  4:'Um welche Uhrzeit – und wie möchtet ihr sprechen?',
+  5:'Fast geschafft – eure Kontaktdaten',
+  6:''
+};
+
+function openBooking(offer){
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+  if(offer){
+    document.querySelectorAll('.pick').forEach(p=>p.classList.toggle('sel',p.dataset.offer===offer));
+    state.offer=offer;
+  }
+  goTo(offer?2:1);
+}
+function closeBooking(){
+  document.getElementById('overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeBooking()});
+
+function goTo(n){
+  step=n;
+  document.querySelectorAll('.step').forEach(s=>s.classList.remove('on'));
+  document.getElementById('step'+n).classList.add('on');
+  document.querySelectorAll('.err').forEach(e=>e.style.display='none');
+  const bars=document.querySelectorAll('#stepsBar i');
+  bars.forEach((b,i)=>b.classList.toggle('on',i<Math.min(n,5)));
+  document.getElementById('stepKicker').textContent=n<=5?`Schritt ${n} von 5`:'Bestätigung';
+  document.getElementById('modalTitle').textContent=TITLES[n];
+  document.getElementById('backBtn').style.visibility=(n>1&&n<6)?'visible':'hidden';
+  const nextBtn=document.getElementById('nextBtn');
+  document.getElementById('modalFoot').style.display=n===6?'none':'flex';
+  nextBtn.textContent=n===5?'Anfrage absenden':'Weiter →';
+  if(n===5)buildSummary();
+}
+function prevStep(){if(step>1)goTo(step-1)}
+function showErr(n){const e=document.getElementById('err'+n);e.style.display='block'}
+
+function nextStep(){
+  if(step===1){
+    if(!state.offer)return showErr(1);
+    goTo(2);
+  }else if(step===2){
+    if(!val('fNames')||!val('fDate'))return showErr(2);
+    goTo(3);
+  }else if(step===3){
+    if(!state.day)return showErr(3);
+    goTo(4);
+  }else if(step===4){
+    if(!state.time)return showErr(4);
+    goTo(5);
+  }else if(step===5){
+    const email=val('fEmail');
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)||!val('fPhone'))return showErr(5);
+    submitBooking();
+  }
+}
+function val(id){return document.getElementById(id).value.trim()}
+
+function pickOffer(el){
+  document.querySelectorAll('.pick').forEach(p=>p.classList.remove('sel'));
+  el.classList.add('sel');
+  state.offer=el.dataset.offer;
+}
+
+/* ---------- Kalender: ganzer Monat, bis 12 Monate im Voraus ---------- */
+const DAYS=['So','Mo','Di','Mi','Do','Fr','Sa'];
+const MONTHS_FULL=['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
+const MONTHS=['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'];
+const TIMES=['10:00','11:00','14:00','15:00','16:00','17:00','19:00','20:00'];
+const today=new Date();today.setHours(0,0,0,0);
+let calYear=today.getFullYear(),calMonth=today.getMonth();
+const maxCal=new Date(today.getFullYear(),today.getMonth()+12,1);
+
+function calMove(dir){
+  calMonth+=dir;
+  if(calMonth<0){calMonth=11;calYear--}
+  if(calMonth>11){calMonth=0;calYear++}
+  renderCal();
+}
+function renderCal(){
+  document.getElementById('calLabel').textContent=`${MONTHS_FULL[calMonth]} ${calYear}`;
+  const atMin=calYear===today.getFullYear()&&calMonth===today.getMonth();
+  const atMax=calYear===maxCal.getFullYear()&&calMonth===maxCal.getMonth();
+  document.getElementById('calPrev').disabled=atMin;
+  document.getElementById('calNext').disabled=atMax;
+  const grid=document.getElementById('calGrid');
+  grid.innerHTML='';
+  ['Mo','Di','Mi','Do','Fr','Sa','So'].forEach(w=>{
+    const s=document.createElement('span');s.className='cal-wd';s.textContent=w;grid.appendChild(s);
+  });
+  const first=new Date(calYear,calMonth,1);
+  const offset=(first.getDay()+6)%7; // Woche beginnt am Montag
+  for(let i=0;i<offset;i++)grid.appendChild(document.createElement('span'));
+  const daysInMonth=new Date(calYear,calMonth+1,0).getDate();
+  for(let d=1;d<=daysInMonth;d++){
+    const date=new Date(calYear,calMonth,d);
+    const b=document.createElement('button');
+    b.className='cal-d';b.type='button';b.textContent=d;
+    b.disabled=date<=today||date.getDay()===0; // Vergangenheit, heute & Sonntage
+    const iso=`${calYear}-${String(calMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    if(state.dayIso===iso)b.classList.add('sel');
+    b.onclick=()=>{
+      document.querySelectorAll('.cal-d').forEach(x=>x.classList.remove('sel'));
+      b.classList.add('sel');
+      state.day=`${DAYS[date.getDay()]}, ${d}. ${MONTHS[calMonth]} ${calYear}`;
+      state.dayIso=iso;
+    };
+    grid.appendChild(b);
+  }
+}
+renderCal();
+
+(function buildTimes(){
+  const timesEl=document.getElementById('slotTimes');
+  TIMES.forEach(t=>{
+    const b=document.createElement('button');
+    b.className='slot-t';b.type='button';b.textContent=t;
+    b.onclick=()=>{
+      document.querySelectorAll('.slot-t').forEach(x=>x.classList.remove('sel'));
+      b.classList.add('sel');
+      state.time=t;
+    };
+    timesEl.appendChild(b);
+  });
+})();
+
+function buildSummary(){
+  const rows=[
+    ['Angebot',state.offer],
+    ['Vornamen',val('fNames')],
+    ['Hochzeitsdatum',val('fDate')],
+    ['Location',val('fLocation')||'–'],
+    ['Gäste',val('fGuests')||'–'],
+    ['Kennenlern-Gespräch',`${state.day} um ${state.time} Uhr`],
+    ['Kanal',val('fChannel')]
+  ];
+  document.getElementById('summaryBox').innerHTML=
+    rows.map(([k,v])=>`<div><span>${k}</span><b>${v}</b></div>`).join('');
+}
+
+function submitBooking(){
+  // Anfrage-Daten, die im Live-Betrieb an ein Backend (z.B. Formular-Endpoint / CRM) gesendet würden:
+  const payload={
+    angebot:state.offer,
+    vornamen:val('fNames'),
+    hochzeitsdatum:val('fDate'),
+    location:val('fLocation')||null,
+    gaeste:val('fGuests')||null,
+    quelle:val('fSource')||null,
+    nachricht:val('fMsg')||null,
+    gespraech:{tag:state.dayIso,zeit:state.time,kanal:val('fChannel')},
+    email:val('fEmail'),
+    telefon:val('fPhone')
+  };
+  console.log('Buchungsanfrage (an Backend zu senden):',payload);
+  document.getElementById('doneText').textContent=
+    `Euer Wunschtermin: ${state.day} um ${state.time} Uhr. Robin meldet sich innerhalb von 24 Stunden, um den Termin zu bestätigen.`;
+  goTo(6);
+}
+</script>
+</body>
+</html>
